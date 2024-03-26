@@ -1,9 +1,10 @@
-  import { View, Text, Image } from "react-native";
-  const imgAdaptive = require ("./assets/adaptive-icon.png");
+import { View, Text,Image, ScrollView, Button } from "react-native";
+const imgAdaptive = require("./assets/adaptive-icon.png");
 
-  export default function App() {
-  return <View style={{ flex: "1", backgroundColor: "plum" }}>
-  <Text style={{padding: 60}}>Barka da <Text style={{color: "white"}}>zuwa</Text></Text>
-  <Image source={imgAdaptive} style={{width:300, height:300}}></Image>
-        </View>;
-  }
+export default function App() {
+  return (
+    <View style={{ flex: "1", backgroundColor: "plum", padding: 40 }}>
+    <Button title="Press" color={"white"} disabled onPress={()=> console.log("Button Pressed")}/>
+    </View>
+  );
+}
