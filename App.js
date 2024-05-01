@@ -9,6 +9,7 @@ import {
   StatusBar,
   ActivityIndicator,
   Alert,
+  TouchableHighlight,
 } from "react-native";
 const chat_haut_wp = require("./assets/chat_haut_wp.jpeg");
 export default function App() {
@@ -41,18 +42,16 @@ export default function App() {
         animationType={"fade"}
       >
         <View style={styles.modalView}>
-          <StatusBar
-            barStyle="dark-content"
-            animated={"true"}
-            StatusBarAnimation={"slide"}
-          />
+        
           <Text>Le contenue du modal</Text>
           <Button title="Alert" onPress={handleAlert} />
-          <Button
-            title="Close modal"
-            color="red"
-            onPress={() => setisVisibleModal(false)}
-          />
+          <TouchableHighlight
+          activeOpacity={0.70}
+          underlayColor="red"
+          style={styles.button}
+            onPress={() => setisVisibleModal(false)}>
+              <Text style={{color: "#fff"}}>Close Modal</Text>
+            </TouchableHighlight>
         </View>
       </Modal>
     </ImageBackground>
@@ -71,4 +70,9 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   },
+  button: {
+    backgroundColor: 'black',
+    padding: 10,
+    borderRadius: 10,
+  }
 });
