@@ -8,16 +8,16 @@ import {
   Modal,
   StatusBar,
   ActivityIndicator,
-  Alert
+  Alert,
 } from "react-native";
 const chat_haut_wp = require("./assets/chat_haut_wp.jpeg");
 export default function App() {
   const [isVisibleModal, setisVisibleModal] = useState(false);
   const handleAlert = () => {
     Alert.alert("Bonjour", "Choisissez un endroit", [
-      {text: "Vrai"},
-      {text: "Faux"}
-    ])
+      { text: "Vrai", onPress: () => console.log("Oui tu a trouver") },
+      { text: "Faux", onPress: () => console.log("Faut, tu n'as pas trouver") },
+    ]);
   };
   return (
     <ImageBackground
@@ -47,9 +47,7 @@ export default function App() {
             StatusBarAnimation={"slide"}
           />
           <Text>Le contenue du modal</Text>
-          <Button title="Alert" 
-            onPress={handleAlert}
-          />
+          <Button title="Alert" onPress={handleAlert} />
           <Button
             title="Close modal"
             color="red"
