@@ -4,7 +4,8 @@ export default function App() {
   return (
   <ImageBackground
   source={chat_haut_wp}
-  style={styles.background}>
+  style={styles.background}
+  resizeMode="cover">
 
   </ImageBackground>
   );
@@ -13,6 +14,7 @@ export default function App() {
 const styles = StyleSheet.create({
   background:{
     flex: 1,
+    
   }
 })
 
