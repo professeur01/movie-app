@@ -15,7 +15,7 @@ export default function App() {
   const [isVisibleModal, setisVisibleModal] = useState(false);
   const handleAlert = () => {
     Alert.alert("Bonjour", "Choisissez un endroit", [
-      { text: "Vrai", onPress: () => console.log("Oui tu a trouver") },
+      { text: "Vrai", onPress: () => setisVisibleModal(false) },
       { text: "Faux", onPress: () => console.log("Faut, tu n'as pas trouver") },
     ]);
   };
