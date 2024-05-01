@@ -6,10 +6,15 @@ import {
   ImageBackground,
   Button,
   Modal,
+  StatusBar,
+  ActivityIndicator,
 } from "react-native";
 const chat_haut_wp = require("./assets/chat_haut_wp.jpeg");
 export default function App() {
   const [isVisibleModal, setisVisibleModal] = useState(false);
+  const handleDismiss = () => {
+    console.log("Hello World");
+  }
   return (
     <ImageBackground
       source={chat_haut_wp}
@@ -21,11 +26,13 @@ export default function App() {
         onPress={() => setisVisibleModal(true)}
         color="#007AFF"
       />
+      <ActivityIndicator size="large" color="#007AFF" animating ={isVisibleModal}/>
       <Modal
         visible={isVisibleModal}
         onRequestClose={() => setisVisibleModal(false)}
-        
+        animationType={"fade"}     
       ><View style={styles.modalView}>
+      <StatusBar barStyle="dark-content" animated={"true"} StatusBarAnimation={"slide"} />
         <Text>Le contenue du modal</Text>
         <Button
           title="Close modal"
@@ -46,7 +53,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     flex: 1,
-    backgroundColor: "#f1f1f1",
+    backgroundColor: "yellow",
     justifyContent: "center",
     alignItems: "center",
   },
